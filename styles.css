@@ -1,0 +1,211 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    flex: 1;
+    min-height: 100vh; /* Ensure the intro section takes up at least one viewport height */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.container {
+    padding: 2rem;
+    width: 100%; /* Ensure full width */
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    animation: fadeIn 1.5s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align children */
+    justify-content: center; /* Center vertically */
+}
+
+.title {
+    font-size: 3rem;
+    margin: 0;
+    color: #007bff;
+    animation: slideIn 1s ease-out;
+}
+
+.description {
+    font-size: 1.25rem;
+    margin: 0.5rem 0 0;
+    color: #555;
+    animation: slideIn 1s 0.5s ease-out;
+}
+
+.template-section {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 1200px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    transform: translateX(100%);
+    border-radius: 2px;
+    animation: underlineAnimate 2s ease-out infinite;
+}
+
+@keyframes underlineAnimate {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 0;
+        transform: translateX(0);
+    }
+    100% {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+}
+
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.template-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 1rem;
+    text-align: center;
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.template-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.template-card img {
+    width: 100%;
+    height: auto;
+}
+
+.template-card h3 {
+    margin: 1rem 0 0.5rem;
+    color: #007bff;
+    transition: color 0.5s ease;
+    font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+@keyframes colorShift {
+    0% {
+        color: #007bff;
+    }
+    20% {
+        color: #00d4ff;
+    }
+    40% {
+        color: #ff007a;
+    }
+    60% {
+        color: #ffab00;
+    }
+    80% {
+        color: #4caf50;
+    }
+    100% {
+        color: #007bff;
+    }
+}
+
+.template-card:hover h3 {
+    animation: colorShift 1.5s infinite;
+}
+
+.template-card p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.template-card .download-btn {
+    background: #007bff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: background 0.3s;
+}
+
+.template-card .download-btn:hover {
+    background: #0056b3;
+}
+
+.view-more-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.view-more-btn:hover {
+    background: #0056b3;
+}
+
+.footer {
+    background-color: #544f4e; /* Updated Background color */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: relative; /* Ensure it sits at the bottom of the page content */
+    margin-top: 2rem;
+    clear: both; /* Ensure footer is below other content */
+}
